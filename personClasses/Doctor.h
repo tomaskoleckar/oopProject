@@ -4,10 +4,12 @@
 #include "Patient.h"
 #pragma once
 
+class Hospital;
+
 class Doctor:Person
 {
 public:
-    Doctor(string name);
+    Doctor(string name, Hospital* hospital);
     string getType();
     void setPatient(Patient* patient);
     void workInAmbulance(int id);
@@ -18,6 +20,7 @@ public:
 private:
     Patient* currentPatient;
     bool isInAmbulance;
+    Hospital* hospital;
 };
 
 #endif

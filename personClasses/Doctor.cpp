@@ -1,8 +1,9 @@
 #include "Doctor.h"
 
-Doctor::Doctor(string name):Person(name)
+Doctor::Doctor(string name, Hospital* hospital):Person(name)
 {
     this->isInAmbulance = false;
+    this->hospital = hospital;
 }
 
 string Doctor::getType()
@@ -13,6 +14,14 @@ string Doctor::getType()
 void Doctor::setPatient(Patient *patient)
 {
     this->currentPatient = patient;
+}
+
+void Doctor::workInAmbulance(int id)
+{
+    
+    if(this->hospital->getAmbulance(id) != nullptr && )
+    this->isInAmbulance = true;
+
 }
 
 void Doctor::makeDiagnose(string name, vector<string> symptoms,  vector<string> treatments)
