@@ -1,4 +1,5 @@
 #include "Doctor.h"
+#include "../Hospital.h"
 
 Doctor::Doctor(string name, Hospital* hospital):Person(name)
 {
@@ -18,10 +19,13 @@ void Doctor::setPatient(Patient *patient)
 
 void Doctor::workInAmbulance(int id)
 {
+    Ambulance* ambulance = this->hospital->getAmbulance(id);
     
-    if(this->hospital->getAmbulance(id) != nullptr && )
-    this->isInAmbulance = true;
-
+    if (ambulance != nullptr && !this->isInAmbulance)
+    {
+        this->isInAmbulance = true;
+        ambulance->assignDoctor(this);
+    }
 }
 
 void Doctor::makeDiagnose(string name, vector<string> symptoms,  vector<string> treatments)
@@ -46,5 +50,6 @@ void Doctor::leaveAmbulance()
 
 Doctor::~Doctor()
 {
-
+    this->currentPatient = nullptr;
+    this->hospital = nullptr;
 }

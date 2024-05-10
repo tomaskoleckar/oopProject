@@ -3,8 +3,8 @@
 
 #include "personClasses/Person.h"
 #include "personClasses/Patient.h"
-#include "personClasses/Doctor.h"
 #include "personClasses/Nurse.h"
+#include "personClasses/Doctor.h"
 #include "Ambulance.h"
 #include "Address.h"
 #include "vector"
@@ -19,7 +19,7 @@ public:
 
     void addPerson(Person* person);
     void createAmbulance();
-
+    Ambulance* getAmbulance(int id);
 
     ~Hospital();
 

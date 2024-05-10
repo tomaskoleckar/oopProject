@@ -5,16 +5,20 @@
 #include "Diagnose.h"
 #pragma once
 
-class Patient:Person
+class Hospital;
+
+class Patient : public Person
 {
 public:
-    Patient(string name);
+    Patient(string name, Hospital* hospital);
     string getType();
     void setDiagnose(Diagnose* diagnose);
+    void examinate();
     ~Patient();
 
 private:
     vector<Diagnose*> diagnose;
+    Hospital* hospital;
 };
 
 #endif

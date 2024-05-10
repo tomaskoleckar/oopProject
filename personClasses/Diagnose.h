@@ -14,6 +14,7 @@ public:
     void addSymptom(string symptom);
     void addTreatment(string treatment);
 
+    void printDiagnose();
     ~Diagnose();
 
 private:

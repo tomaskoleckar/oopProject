@@ -1,13 +1,17 @@
 #ifndef AMBULANCE_H
 #define AMBULANCE_H
-#include "personClasses/Doctor.h"
-#include "personClasses/Nurse.h"
 #pragma once
+
+class Doctor;
+class Nurse;
 
 class Ambulance
 {
 public:
     Ambulance(int id);
+    void assignDoctor(Doctor* doctor);
+    void assignNurse(Nurse* nurse);
+    int getId();
     ~Ambulance();
 
 private:

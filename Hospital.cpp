@@ -9,7 +9,7 @@ Hospital::Hospital(string name, string city, string street, string houseNumber,i
     }
 }
 
-void Hospital::addPerson(Person *person)
+void Hospital::addPerson(Person* person)
 {
     if (person->getType() == "Patient")
     {
@@ -34,7 +34,15 @@ void Hospital::createAmbulance()
     this->ambulances.push_back(newAmbulance);
 }
 
-
+Ambulance* Hospital::getAmbulance(int id)
+{
+    for(Ambulance* ambulance : ambulances){
+        if(ambulance->getId() == id){
+            return ambulance;
+        }
+    }
+    return nullptr;
+}
 
 Hospital::~Hospital()
 {

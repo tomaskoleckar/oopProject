@@ -15,7 +15,22 @@ void Diagnose::addTreatment(string treatment)
     this->treatments.push_back(treatment);
 }
 
+void Diagnose::printDiagnose()
+{
+    cout << "Symptoms: " << endl;
+    for(string symptom : this->symptoms){
+        cout << symptom << endl;
+    }
+    cout << "Treatments: " << endl;
+    for(string treatment : this->treatments){
+        cout << treatment << endl;
+    }
+    cout << endl;
+
+}
+
 Diagnose::~Diagnose()
 {
-
+    symptoms.clear();
+    treatments.clear();
 }

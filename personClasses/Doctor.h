@@ -2,11 +2,14 @@
 #define DOCTOR_H
 #include "Person.h"
 #include "Patient.h"
+#include "../Ambulance.h"
 #pragma once
+
 
 class Hospital;
 
-class Doctor:Person
+
+class Doctor : public Person
 {
 public:
     Doctor(string name, Hospital* hospital);

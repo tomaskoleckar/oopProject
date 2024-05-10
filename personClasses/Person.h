@@ -14,7 +14,7 @@ public:
     int getId();
     virtual string getType() = 0;
     void setId(int id);
-    ~Person();
+    virtual ~Person();
 
 private:
     string name;
