@@ -7,6 +7,8 @@
 
 using namespace std;
 
+//Reprezentuje třídu Diagnóza - diagnóza pacienta
+
 class Diagnose
 {
 public:

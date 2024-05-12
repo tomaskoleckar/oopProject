@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//Reprezentuje třídu Adress - adresa - pomocná třída pro nemocnici a případně dodělané adresy zaměstnanců a pacientů
 class Address
 {
 public:

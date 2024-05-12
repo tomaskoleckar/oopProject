@@ -18,6 +18,33 @@ void Patient::setDiagnose(Diagnose *diagnose)
 
 void Patient::examinate()
 {
+    bool freeAmbulance = false;
+    for(Ambulance* ambulance : hospital->getAmbulances()){
+        if(ambulance->getPatient() == nullptr && ambulance->getDoctor() != nullptr){
+            this->examinate(ambulance);
+            freeAmbulance = true;
+            break;           
+        }
+    }
+    if(!freeAmbulance){
+        cout << "No available ambulance right now !" << endl;
+    }
+}
+
+void Patient::printDiagnose()
+{
+    if(this->diagnose.size() != 0){
+    cout << "Patient " << this->getName() << " has diagnoses : " << endl;
+    for(Diagnose* dia : this->diagnose){
+        dia->printDiagnose();
+    }
+    }
+}
+
+void Patient::examinate(Ambulance * ambulance)
+{
+    ambulance->assignPatient(this);
+    ambulance->cure();
 }
 
 Patient::~Patient()

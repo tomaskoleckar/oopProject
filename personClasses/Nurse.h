@@ -7,6 +7,8 @@
 
 class Hospital;
 
+//Reprezentuje třídu Nurse - sestřička
+
 class Nurse : public Person
 {
 public:

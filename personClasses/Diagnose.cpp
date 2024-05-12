@@ -21,6 +21,7 @@ void Diagnose::printDiagnose()
     for(string symptom : this->symptoms){
         cout << symptom << endl;
     }
+    cout << endl;
     cout << "Treatments: " << endl;
     for(string treatment : this->treatments){
         cout << treatment << endl;

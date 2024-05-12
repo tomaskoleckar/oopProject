@@ -20,6 +20,7 @@ public:
     void addPerson(Person* person);
     void createAmbulance();
     Ambulance* getAmbulance(int id);
+    std::vector<Ambulance*> getAmbulances();
 
     ~Hospital();
 

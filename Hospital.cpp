@@ -44,7 +44,31 @@ Ambulance* Hospital::getAmbulance(int id)
     return nullptr;
 }
 
-Hospital::~Hospital()
+std::vector<Ambulance *> Hospital::getAmbulances()
 {
+    return this->ambulances;
+}
 
+Hospital::~Hospital() {
+    for (Ambulance* ambulance : ambulances) {
+        delete ambulance;
+    }
+    ambulances.clear();
+
+    for (Patient* patient : patients) {
+        delete patient;
+    }
+    patients.clear();
+
+    for (Doctor* doctor : doctors) {
+        delete doctor;
+    }
+    doctors.clear();
+
+    for (Nurse* nurse : nurses) {
+        delete nurse;
+    }
+    nurses.clear();
+    
+    delete address;
 }

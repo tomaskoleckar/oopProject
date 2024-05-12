@@ -15,6 +15,11 @@ string Person::getType()
     return string();
 }
 
+string Person::getName()
+{
+    return this->name;
+}
+
 void Person::setId(int id)
 {
     this->id = id;
